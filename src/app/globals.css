@@ -3,25 +3,203 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Color Palette */
+  --text-color: #ece7ea;
+  --background-color: #130f12;
+  --primary-color: #f770be;
+  --secondary-color: #09a976;
+  --secondary-color: #09aa7746;
+  --accent-color: #3c68f5;
+  --heading-color: #ebe7ea;
+  --border-color: #e0e0e0; /* Light grey for subtle borders */
+  --link-color: #0077b6; /* Accessible blue for links */
+  --link-hover-color: #005f87; /* Darker blue for link hover states */
+
+  /* Typography */
+  --font-family: "Inter", sans-serif; /* Modern sans-serif font */
+  --heading-font-size: 2rem;
+  --body-font-size: 1rem;
+  --small-text-size: 0.875rem;
+  --line-height: 1.6;
+  --font-weight-bold: 600;
+  --font-weight-normal: 400;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+
+  /* Button Styles */
+  --button-bg-primary-color: var(--primary-color);
+  --button-bg-secondary-color: var(--secondary-color);
+  --button-text-color: var(--text-color);
+  --button-padding: 12px 24px;
+  --button-margin: 2px 0 2px 0;
+  --button-border-radius: 6px;
+
+  /* Shadow */
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* CSS Preset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
+html,
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  font-size: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* General Styles */
+body {
+  font-family: var(--font-family);
+  font-size: var(--body-font-size);
+  line-height: var(--line-height);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--heading-font-size);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+button {
+  background-color: var(--button-bg-primary-color);
+  color: var(--button-text-color);
+  padding: var(--button-padding);
+  margin: var(--button-margin);
+  border: none;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Secondary button color */
+.button-secondary {
+  background-color: var(--button-bg-secondary-color);
+}
+
+/* Container for general layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+/* Cards */
+.card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  box-shadow: var(--box-shadow);
+  margin-bottom: var(--spacing-lg);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* CSS Preset - Media Queries */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #171215;
+    --background-color: #efebee;
+    --primary-color: #910858;
+    --secondary-color: #55f6c3;
+    --accent-color: #0a35c2;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #ece7ea;
+    --background-color: #130f12;
+    --primary-color: #f770be;
+    --secondary-color: #09aa7746;
+    --accent-color: #3c68f5;
   }
 }
