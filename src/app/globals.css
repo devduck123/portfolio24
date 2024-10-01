@@ -5,11 +5,10 @@
 :root {
   /* Color Palette */
   --text-color: #ece7ea;
-  --background-color: #130f12;
-  --primary-color: #f770be;
-  --secondary-color: #09a976;
-  --secondary-color: #09aa7746;
-  --accent-color: #3c68f5;
+  --background-color: #111115;
+  --primary-color: #7675f3;
+  --secondary-color: #504759;
+  --accent-color: #8d7c97;
   --heading-color: #ebe7ea;
   --border-color: #e0e0e0; /* Light grey for subtle borders */
   --link-color: #0077b6; /* Accessible blue for links */
@@ -143,6 +142,12 @@ button:hover {
   transform: scale(1.1);
 }
 
+header {
+  box-shadow: var(--box-shadow);
+  border-radius: var(--button-border-radius);
+  padding: 2px;
+}
+
 /* Secondary button color */
 .button-secondary {
   background-color: var(--button-bg-secondary-color);
@@ -187,19 +192,20 @@ button:hover {
 
 @media (prefers-color-scheme: light) {
   :root {
-    --text-color: #171215;
-    --background-color: #efebee;
-    --primary-color: #910858;
-    --secondary-color: #55f6c3;
-    --accent-color: #0a35c2;
+    --text-color: #101014;
+    --background-color: #ebebef;
+    --primary-color: #0c0c88;
+    --secondary-color: #b0a7b9;
+    --accent-color: #796882;
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
+    /* Color Palette */
     --text-color: #ece7ea;
-    --background-color: #130f12;
-    --primary-color: #f770be;
-    --secondary-color: #09aa7746;
-    --accent-color: #3c68f5;
+    --background-color: #111115;
+    --primary-color: #7675f3;
+    --secondary-color: #504759;
+    --accent-color: #8d7c97;
   }
 }
